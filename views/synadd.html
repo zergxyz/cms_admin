@@ -1,0 +1,71 @@
+
+    <div ng-show="!finishCreation" class="ng-hide">
+        <br>
+        
+         <div class="container lighter">
+        <span class="label label-primary">Title</span>
+        <input type="text" class="form-control" ng-model="newSyn.name"/>
+        
+        <label for="lan"> language: </label><br>
+        <select name="lan" ng-model="newSyn.lan">
+          <option value="ENG">English</option>
+          <option value="CHN">Chinese</option>
+        </select>
+        
+        <label for="lan"> Adult card: </label>
+            <select name="adt" ng-model="newSyn.isAdt">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        
+        <label for="lan"> Peds card : </label>
+            <select name="peds" ng-model="newSyn.isPeds">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+        </div><br>
+        
+        <div class="container lighter">Immediate Consideration
+            <div text-angular ng-model="newSyn.ic" name="i_c" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+        </div>
+
+        <br>
+        <div class="container text-center lighter border-around">
+            <div class="lighter roboto">
+                <p ng-bind-html="newSyn.ic" class="text-left text-med text-gray"></p>
+            </div>
+        </div>
+        <br>
+        
+        <div class="container lighter">Management after stablization
+            <div text-angular ng-model="newSyn.mas" name="mas" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+        </div>
+        
+        <div class="container lighter">Caution
+            <div text-angular ng-model="newSyn.cau" name="cau" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+        </div>
+        
+        <div class="container lighter">Reference
+            <div text-angular ng-model="newSyn.ref" name="ref" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+        </div>
+        
+         <div class="container lighter">Algorithm
+            <div text-angular ng-model="newSyn.algo" name="algo" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+            <button class='btn btn-primary' ng-click="addSyndrome()">Add</button>
+        </div>
+        
+     </div>   
+     
+     
+        <div class="container lighter" ng-show="finishCreation" class="ng-hide">
+            <br><br>
+            <div class="container lighter">
+                <alert  type='success'>New Syndrome Created !</alert>
+                <br> <a href="#/syndrome" class="btn btn-info btn-primary pull-right" role="button">Back</a>
+            </div>
+        </div>
+
+
+
+
+     

@@ -1,0 +1,101 @@
+
+
+
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+</div>
+<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+<div class="row">
+
+<div class="col-md-1 col-lg-1">
+
+</div>
+    <div class="col-lg-10 col-md-10">
+        <div ng-include src="navbarURL"></div>
+
+       <div class="row" ng-show="!editCheck" class="ng-hide">
+
+
+            <alert ng-repeat="alert in alerts" type='{{alert.type}}' close="closeAlert($index)">{{alert.msg}} </alert>
+            
+             
+            <div class="col-lg-8 col-md-8" >
+                 <!--ng-bind-html="myHTML"-->
+                  <h3>{{title}}</h3>
+                 <!--<div >{{myHTML}}</div>-->
+                 <br><br>
+                 <h4>Indication</h4>
+                 <div ng-bind-html="ind" >{{ind}}</div> <br>
+                 
+                 <h4>Caution</h4>
+                 <div ng-bind-html="cau" >{{cau}}</div><br>
+                 
+                 <h4>Available From</h4>
+                 <div ng-bind-html="af" >{{af}}</div>
+                 
+                 <h4>Reference</h4>
+                 <div ng-bind-html="ref" >{{ref}}</div>
+                 
+                 
+                
+            </div>
+            <br><br>
+            <button type="button" class="btn btn-primary pull-right" ng-click="checkEdit()">Edit</button>
+            
+             <!--<a href="#/synedit" class="btn btn-info btn-primary pull-right" role="button">Edit</a>-->
+             
+           
+</div>
+
+
+
+<div class="row" ng-show="editCheck" class="ng-hide">
+
+
+            
+            <div class="container lighter">
+                <span class="label label-primary">Title</span>
+                <input type="text" class="form-control" ng-model="title"/>
+            </div><br>
+            
+             <div class="container lighter">Indication
+                <div text-angular ng-model="ind" name="m_ind" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+            </div><br>
+            
+        
+        <div class="container lighter">Caution
+            <div text-angular ng-model="cau" name="m_cau" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+        </div>
+        
+        <div class="container lighter">Available From
+            <div text-angular ng-model="af" name="m_af" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+            
+        </div>
+        
+         <div class="container lighter">Reference
+            <div text-angular ng-model="ref" name="m_ref" ta-text-editor-class="border-around container" ta-html-editor-class="border-around"></div>
+            <button type="button" class="btn btn-primary" ng-click="updateMed()">Update</button>
+        </div>
+        
+       
+        
+         
+           
+            
+             
+        
+
+
+            
+           
+</div>
+
+     
+
+</div>
+
+
+</div>
+
+
+    </div>
